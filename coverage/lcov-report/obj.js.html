@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40.32% </span>
+        <span class="strong">61.29% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>25/62</span>
+        <span class='fraction'>38/62</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30.23% </span>
+        <span class="strong">51.16% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>13/43</span>
+        <span class='fraction'>22/43</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">22.73% </span>
+        <span class="strong">40.91% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>5/22</span>
+        <span class='fraction'>9/22</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">42.37% </span>
+        <span class="strong">64.41% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>25/59</span>
+        <span class='fraction'>38/59</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -197,24 +197,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -270,8 +270,8 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">47x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -311,25 +311,25 @@ isNotDefined = varFuncs.isNotDefined;
 // Returns the value found (possibly undefined or null) at a given
 // property path for a given object. The path is a string of property
 // names, concatenated by dots.
-/*export*/ const walk = <span class="fstat-no" title="function not covered" >(h</span>ash, path, delim) =&gt; {
-<span class="cstat-no" title="statement not covered" >  if (isNotDefined(path)) {</span>
-<span class="cstat-no" title="statement not covered" >    return path;</span>
+/*export*/ const walk = (hash, path, delim) =&gt; {
+  if (isNotDefined(path)) {
+    return path;
   }
-<span class="cstat-no" title="statement not covered" >  delim = delim || '.';</span>
-  const steps = <span class="cstat-no" title="statement not covered" >path.split(delim);</span>
-  let out = <span class="cstat-no" title="statement not covered" >hash;</span>
-  let step = <span class="cstat-no" title="statement not covered" >steps.shift();</span>
-<span class="cstat-no" title="statement not covered" >  while (out !== null &amp;&amp; out !== undefined &amp;&amp; step) {</span>
-<span class="cstat-no" title="statement not covered" >    out = out[step];</span>
-<span class="cstat-no" title="statement not covered" >    step = steps.shift();</span>
+  delim = delim || '.';
+  const steps = path.split(delim);
+  let out = hash;
+  let step = steps.shift();
+  while (out !== null &amp;&amp; out !== undefined &amp;&amp; step) {
+    out = out[step];
+    step = steps.shift();
   }
-<span class="cstat-no" title="statement not covered" >  return out;</span>
+  return out;
 };
 &nbsp;
 // Binds a list of methods to a context object, enabling the methods to be
 // called in DOM event handlers without losing their context.
-/*export*/ const bindMethods = <span class="fstat-no" title="function not covered" >(m</span>ethodNames, ctxt) =&gt; {
-<span class="cstat-no" title="statement not covered" >  (methodNames || '').forEach(<span class="fstat-no" title="function not covered" >na</span>me =&gt; {</span>
+/*export*/ const bindMethods = (methodNames, ctxt) =&gt; {
+  (methodNames || '').forEach(<span class="fstat-no" title="function not covered" >na</span>me =&gt; {
 <span class="cstat-no" title="statement not covered" >    ctxt[name] = ctxt[name].bind(ctxt);</span>
   });
 };
@@ -385,8 +385,8 @@ isNotDefined = varFuncs.isNotDefined;
 module.exports = {
   isEmpty: function(hash) {return isEmpty(hash); },
   shallowCompare: function(hash1, hash2, keys) {return shallowCompare(hash1, hash2, keys);},
-  walk: <span class="fstat-no" title="function not covered" >fu</span>nction(hash, path, delim) {<span class="cstat-no" title="statement not covered" >return walk(hash, path, delim);}</span>,
-  bindMethods: <span class="fstat-no" title="function not covered" >fu</span>nction(methodNames, ctxt) {<span class="cstat-no" title="statement not covered" >return bindMethods(methodNames, ctxt);}</span>,
+  walk: function(hash, path, delim) {return walk(hash, path, delim);},
+  bindMethods: function(methodNames, ctxt) {return bindMethods(methodNames, ctxt);},
   copyProps: <span class="fstat-no" title="function not covered" >fu</span>nction(propNames, fromObject, toObject = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {<span class="cstat-no" title="statement not covered" >return copyProps(propNames, fromObject, toObject);}</span>,
   hashValuesToArray: <span class="fstat-no" title="function not covered" >fu</span>nction(hash, sorted) {<span class="cstat-no" title="statement not covered" >return hashValuesToArray(hash, sorted);}</span>,
   hashArrayBy: <span class="fstat-no" title="function not covered" >fu</span>nction(arr, keyFn, hash) {<span class="cstat-no" title="statement not covered" >return hashArrayBy(arr, keyFn, hash);}</span>,
@@ -397,7 +397,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Feb 12 2019 12:07:07 GMT-0800 (Pacific Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Feb 12 2019 14:11:39 GMT-0800 (Pacific Standard Time)
 </div>
 </div>
 <script src="prettify.js"></script>

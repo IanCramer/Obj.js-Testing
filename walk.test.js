@@ -31,11 +31,24 @@ describe('walk', () =>
 		expect(walk(obj, undefined)).toBe(undefined);
 
 		expect(walk(obj, null)).toBe(null); // Interesting note case
+		
+		var caughtErr = false;
+		try{ expect(walk(obj, true)).toEqual(TypeError); }
+		catch(err){ caughtErr = true; }
+		if (!caughtErr)
+			expect(true).toBe(false);
 
-		expect(walk(obj, true)).toBe(undefined);
-		expect(walk(obj, 6)).toBe(undefined);
-		expect(walk(obj, anotherObj)).toBe(undefined);
+		caughtErr = false;
+		try{ expect(walk(obj, 6)).toBe(undefined); }
+		catch(err){ caughtErr = true; }
+		if (!caughtErr)
+			expect(true).toBe(false);
 
+		caughtErr = false;
+		try{ expect(walk(obj, anotherObj)).toBe(undefined); }
+		catch(err){ caughtErr = true; }
+		if (!caughtErr)
+			expect(true).toBe(false);
 	});
 
 	test('Bad path structure', () =>

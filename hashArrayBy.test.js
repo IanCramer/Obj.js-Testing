@@ -134,6 +134,7 @@ describe('hashArrayBy', () =>
 		var arr = [obj1, obj2, obj3];
 		var keyFunc = function(x) { return x.toString(); };
 		// toString() on objects just seems to return '[object Object]'
+		// All values are being hashed to the same key so it keeps getting overwritten and data from the array is lost.
 		expect(hashArrayBy(arr, keyFunc)).toEqual({ '[object Object]': { p3: 'v3' } });
 	});
 

@@ -67,6 +67,7 @@ isNotDefined = varFuncs.isNotDefined;
 };
 
 // Returns an array constructured from a given hash's values.
+// Takes a hash to be constructured and a bool if user wants the array sorted
 /*export*/ const hashValuesToArray = (hash, sorted) => {
   const keys = Object.keys(hash || {});
   if (sorted) {

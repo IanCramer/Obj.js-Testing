@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">61.29% </span>
+        <span class="strong">66.13% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>38/62</span>
+        <span class='fraction'>41/62</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">51.16% </span>
+        <span class="strong">53.49% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>22/43</span>
+        <span class='fraction'>23/43</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40.91% </span>
+        <span class="strong">45.45% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>9/22</span>
+        <span class='fraction'>10/22</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">64.41% </span>
+        <span class="strong">67.8% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>38/59</span>
+        <span class='fraction'>40/59</span>
       </div>
     </div>
     <p class="quiet">
@@ -197,11 +197,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -214,7 +214,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -231,11 +231,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -270,10 +270,10 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">47x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//import { isNotDefined } from './var';
@@ -328,8 +328,8 @@ isNotDefined = varFuncs.isNotDefined;
 &nbsp;
 // Binds a list of methods to a context object, enabling the methods to be
 // called in DOM event handlers without losing their context.
-/*export*/ const bindMethods = (methodNames, ctxt) =&gt; {
-  (methodNames || '').forEach(<span class="fstat-no" title="function not covered" >na</span>me =&gt; {
+/*export*/ const bindMethods = <span class="fstat-no" title="function not covered" >(m</span>ethodNames, ctxt) =&gt; {
+<span class="cstat-no" title="statement not covered" >  (methodNames || '').forEach(<span class="fstat-no" title="function not covered" >na</span>me =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    ctxt[name] = ctxt[name].bind(ctxt);</span>
   });
 };
@@ -345,12 +345,12 @@ isNotDefined = varFuncs.isNotDefined;
 };
 &nbsp;
 // Returns an array constructured from a given hash's values.
-/*export*/ const hashValuesToArray = <span class="fstat-no" title="function not covered" >(h</span>ash, sorted) =&gt; {
-  const keys = <span class="cstat-no" title="statement not covered" >Object.keys(hash || {});</span>
-<span class="cstat-no" title="statement not covered" >  if (sorted) {</span>
+/*export*/ const hashValuesToArray = (hash, sorted) =&gt; {
+  const keys = Object.keys(hash || {});
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (sorted) {
 <span class="cstat-no" title="statement not covered" >    keys.sort();</span>
   }
-<span class="cstat-no" title="statement not covered" >  return keys.map(<span class="fstat-no" title="function not covered" >ke</span>y =&gt; <span class="cstat-no" title="statement not covered" >hash[key])</span>;</span>
+  return keys.map(key =&gt; hash[key]);
 };
 &nbsp;
 // Returns a hash whose values are the given array's items. The hash key
@@ -386,9 +386,9 @@ module.exports = {
   isEmpty: function(hash) {return isEmpty(hash); },
   shallowCompare: function(hash1, hash2, keys) {return shallowCompare(hash1, hash2, keys);},
   walk: function(hash, path, delim) {return walk(hash, path, delim);},
-  bindMethods: function(methodNames, ctxt) {return bindMethods(methodNames, ctxt);},
+  bindMethods: <span class="fstat-no" title="function not covered" >fu</span>nction(methodNames, ctxt) {<span class="cstat-no" title="statement not covered" >return bindMethods(methodNames, ctxt);}</span>,
   copyProps: <span class="fstat-no" title="function not covered" >fu</span>nction(propNames, fromObject, toObject = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {<span class="cstat-no" title="statement not covered" >return copyProps(propNames, fromObject, toObject);}</span>,
-  hashValuesToArray: <span class="fstat-no" title="function not covered" >fu</span>nction(hash, sorted) {<span class="cstat-no" title="statement not covered" >return hashValuesToArray(hash, sorted);}</span>,
+  hashValuesToArray: function(hash, sorted) {return hashValuesToArray(hash, sorted);},
   hashArrayBy: <span class="fstat-no" title="function not covered" >fu</span>nction(arr, keyFn, hash) {<span class="cstat-no" title="statement not covered" >return hashArrayBy(arr, keyFn, hash);}</span>,
   hashArraySlicesBy: <span class="fstat-no" title="function not covered" >fu</span>nction(arr, keyFn, hash) {<span class="cstat-no" title="statement not covered" >return hashArraySlicesBy(arr, keyFn, hash);}</span>,
 }</pre></td></tr>
@@ -397,7 +397,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Feb 12 2019 14:11:39 GMT-0800 (Pacific Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 13 2019 11:56:35 GMT-0800 (Pacific Standard Time)
 </div>
 </div>
 <script src="prettify.js"></script>
